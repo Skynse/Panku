@@ -3,7 +3,7 @@ Panku: Easy Reddit Scraper designed for humans.
 Example Code
 ```py
 from Panku.panku import Reddit
-python_sub = Reddit('Python',count=5)
+python_sub = Reddit('github',count=5)
 python_sub.read()
 ```
 
@@ -31,3 +31,7 @@ Had open-sourced a small script I wrote and mostly forgot about it. But then thi
 by SkullTech101 → https://reddit.com/r/github/comments/ckpjv2/had_opensourced_a_small_script_i_wrote_and_mostly/
 
 ```
+
+Installation - Installs to python default environment.
+
+`py setup.py install`
