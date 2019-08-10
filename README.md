@@ -35,3 +35,7 @@ by SkullTech101 → https://reddit.com/r/github/comments/ckpjv2/had_opensourced_
 Installation - Installs to python default environment.
 
 `py setup.py install`
+
+Run from command line
+'py panku.py -c (count) -s (subreddit)
+
