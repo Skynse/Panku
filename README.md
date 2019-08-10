@@ -37,5 +37,4 @@ Installation - Installs to python default environment.
 `py setup.py install`
 
 Run from command line
-'py panku.py -c (count) -s (subreddit)
-
+`py panku.py -c (count) -s (subreddit)`
