@@ -8,7 +8,7 @@ setup(
     url='',
     license='',
     author='DevSynth',
- #   package_data={'': ['Panku/stats.json']},
+    package_data={'': ['./requirements.txt']},
     include_package_data=True,
     author_email='',
     description='Easy API-less reddit scraper'\
