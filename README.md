@@ -1,4 +1,4 @@
-Panku: Easy Reddit Scraper designed for humans.
+Panku: Easy Reddit post fetcher designed for humans.
 
 Example Code
 ```py
