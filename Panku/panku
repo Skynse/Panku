@@ -14,7 +14,7 @@ __version__ = 1.0
 import argparse
 
 import requests
-
+import json
 
 class Reddit:
 
@@ -41,9 +41,9 @@ class Reddit:
 
         print('Using Base URL: %s\n' % base_url)
 
-        json = requests.get(base_url, headers=headers).json()
+        data  = requests.get(base_url, headers=headers).json()
 
-        for post in json['data']['children']:
+        for post in data['data']['children']:
             title = post['data']['title']
             author = post['data']['author']
             link = post['data']['permalink']

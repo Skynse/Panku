@@ -29,7 +29,6 @@ class Reddit:
 
         """
         :param subreddit: Defines the reddit forum that the code will search through.
-        :param nsfw: Boolean to predetermine whether the code should bypass communities that have suggestive content.
         """
 
     def read(self):
