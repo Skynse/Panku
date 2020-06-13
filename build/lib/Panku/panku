@@ -1,4 +1,4 @@
-#!python
+#!/usr/bin/env python3
 """
 Panku: Easy Reddit Scraper designed for humans.
 
