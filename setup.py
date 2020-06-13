@@ -9,7 +9,7 @@ setup(
     packages=['Panku'],
     license='MIT',
     author='Skynse',
-    long_description=long_description
+    long_description=long_description,
     package_data={'': ['./requirements.txt']},
     include_package_data=True,
     author_email='',
