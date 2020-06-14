@@ -4,13 +4,13 @@ with open("README.md",'r') as fh:
 
 setuptools.setup(
     name='panku',
-    scripts=['Panku/panku'],
+    scripts=['bin/panku'],
     version='0.1',
     license='MIT',
     author='Skynse',
     long_description_content_type='text/markdown',
     long_description=long_description,
-    #package_data={'': ['./requirements.txt']},
+    package_data={'': ['./requirements.txt']},
     packages=setuptools.find_packages(),
     include_package_data=True,
     author_email='',
