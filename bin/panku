@@ -13,7 +13,7 @@ __version__ = 1.0
 
 import argparse
 
-import requests
+from urllib.request import Request,urlopen
 import json
 
 class Reddit:
@@ -41,7 +41,8 @@ class Reddit:
 
         print('Using Base URL: %s\n' % base_url)
 
-        data  = requests.get(base_url, headers=headers).json()
+        req = Request(base_url,headers=headers)
+        data  = json.loads(urlopen(req).read())
 
         for post in data['data']['children']:
             title = post['data']['title']
