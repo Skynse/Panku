@@ -5,7 +5,7 @@ with open("README.md",'r') as fh:
 setuptools.setup(
     name='panku',
     scripts=['bin/panku'],
-    version='0.4',
+    version='0.5',
     license='MIT',
     author='Skynse',
     long_description_content_type='text/markdown',

@@ -9,12 +9,12 @@ python_sub.read()
 
 """
 
-__version__ = 1.0
-
+__version__ = 0.4
+RED = '\u001b[31m'
 import argparse
-
 from urllib.request import Request,urlopen
 import json
+
 
 class Reddit:
 
@@ -45,7 +45,7 @@ class Reddit:
         data  = json.loads(urlopen(req).read())
 
         for post in data['data']['children']:
-            title = post['data']['title']
+            title = RED + post['data']['title'] + '\033[0m'
             author = post['data']['author']
             link = post['data']['permalink']
             lines = f"{title}\nby {author} → https://reddit.com{link} \n"
