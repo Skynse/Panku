@@ -10,17 +10,18 @@ python_sub.read()
 """
 
 __version__ = 0.4
-RED = '\u001b[31m'
 import argparse
 from urllib.request import Request,urlopen
 import json
 
 
+class COLORS:
+        red = '\u001b[31m'
+        green = '\u001b[32m'
+        end = '\033[0m'
+        
 class Reddit:
 
-    class COLORS:
-        red = '\032[91m'
-        end = '\033[0m'
 
     def __init__(self, subreddit, count=20, imgs=False):
         self.subreddit = subreddit
@@ -45,10 +46,10 @@ class Reddit:
         data  = json.loads(urlopen(req).read())
 
         for post in data['data']['children']:
-            title = RED + post['data']['title'] + '\033[0m'
+            title = COLORS.red + post['data']['title'] + COLORS.end
             author = post['data']['author']
             link = post['data']['permalink']
-            lines = f"{title}\nby {author} → https://reddit.com{link} \n"
+            lines = f"{title}\nby {author} → {COLORS.green}https://reddit.com{link}{COLORS.end}  \n"
             print(lines)
 
             if self.imgs:
