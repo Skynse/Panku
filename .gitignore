@@ -1,4 +1,4 @@
 build/
 dist/
 panku.egg-info/
-
+.kateproject

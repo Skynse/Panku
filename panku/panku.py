@@ -7,6 +7,7 @@ Example Code
 >> python_sub = Reddit('Python')
 >> python_sub.read()
 
+DISCLAIMER: FOR PERSONAL USE ONLY.
 """
 
 __version__ = 0.7
@@ -23,7 +24,7 @@ class COLORS:
 
 class Reddit:
 
-    def __init__(self, subreddit: str, count=20, imgs: bool = False) -> None:
+    def __init__(self, subreddit: str, count=20, imgs: bool=False) -> None:
         """
         :param subreddit: Subreddit definition
         :param count: Post count
@@ -43,6 +44,10 @@ class Reddit:
         base_url = f'https://old.reddit.com/r/%s/.json?limit={self.count}' % self.subreddit
 
         print('Using Base URL: %s\n' % base_url)
+        if self.imgs:
+            print('load image urls: True')
+        else:
+            print('load image urls: False')
 
         req = Request(base_url, headers=headers)
         data = json.loads(urlopen(req).read())
@@ -54,7 +59,7 @@ class Reddit:
             lines = f"{title}\nby {author} → {COLORS.green}https://reddit.com{link}{COLORS.end}  \n"
             print(lines)
 
-            if self.imgs:
+            if self.imgs == 1:
                 print(post['data']['url'])
 
 
@@ -92,7 +97,7 @@ if __name__ == "__main__":
         '-i',
         '--image',
         dest='images',
-        help='Post images [unstable]',
+        help='Show image urls',
         type=bool
     )
     args = parser.parse_args()
@@ -100,7 +105,7 @@ if __name__ == "__main__":
     if args.counter:
         runtime_subreddit = Reddit(args.s, count=args.counter)
         if args.images:
-            runtime_subreddit = Reddit(args.s, count=args.counter, imgs=args.images)
+            runtime_subreddit = Reddit(args.s, count=args.counter, imgs=True)
         else:
             runtime_subreddit = Reddit(args.s, count=args.counter)
 
