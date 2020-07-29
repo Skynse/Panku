@@ -11,19 +11,19 @@ python_sub.read()
 
 __version__ = 0.4
 import argparse
-from urllib.request import Request,urlopen
+from urllib.request import Request, urlopen
 import json
 
 
 class COLORS:
-        red = '\u001b[31m'
-        green = '\u001b[32m'
-        end = '\033[0m'
-        
+    red = '\u001b[31m'
+    green = '\u001b[32m'
+    end = '\033[0m'
+
+
 class Reddit:
 
-
-    def __init__(self, subreddit, count=20, imgs=False):
+    def __init__(self, subreddit: str, count=20, imgs: bool = False) -> None:
         self.subreddit = subreddit
         self.count = count
         self.imgs = imgs
@@ -32,7 +32,7 @@ class Reddit:
         :param subreddit: Defines the reddit forum that the code will search through.
         """
 
-    def read(self):
+    def read(self) -> None:
         # initialize a user agent so that Reddit, or any website we scrape doesn't think we're a bot
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -42,8 +42,8 @@ class Reddit:
 
         print('Using Base URL: %s\n' % base_url)
 
-        req = Request(base_url,headers=headers)
-        data  = json.loads(urlopen(req).read())
+        req = Request(base_url, headers=headers)
+        data = json.loads(urlopen(req).read())
 
         for post in data['data']['children']:
             title = COLORS.red + post['data']['title'] + COLORS.end

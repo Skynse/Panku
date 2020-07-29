@@ -4,12 +4,12 @@ Panku: Easy Reddit Scraper designed for humans.
 
 Example Code
 
-python_sub = Reddit('Python')
-python_sub.read()
+>> python_sub = Reddit('Python')
+>> python_sub.read()
 
 """
 
-__version__ = 0.4
+__version__ = 0.7
 import argparse
 from urllib.request import Request, urlopen
 import json
@@ -24,13 +24,15 @@ class COLORS:
 class Reddit:
 
     def __init__(self, subreddit: str, count=20, imgs: bool = False) -> None:
+        """
+        :param subreddit: Subreddit definition
+        :param count: Post count
+        :param imgs: Images
+        """
+
         self.subreddit = subreddit
         self.count = count
         self.imgs = imgs
-
-        """
-        :param subreddit: Defines the reddit forum that the code will search through.
-        """
 
     def read(self) -> None:
         # initialize a user agent so that Reddit, or any website we scrape doesn't think we're a bot
