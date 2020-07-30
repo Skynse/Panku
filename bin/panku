@@ -7,7 +7,14 @@ Example Code
 >> python_sub = Reddit('Python')
 >> python_sub.read()
 
-DISCLAIMER: FOR PERSONAL USE ONLY.
+DISCLAIMER FROM REDDITS END USER LICENSE AGREEMENT ON WEB SCRAPING
+
+Access, query, or search the Services with any automated system, 
+other than through our published interfaces and pursuant to their
+applicable terms. However, we conditionally grant permission to crawl
+the Services for the sole purpose of and solely to the extent necessary
+for creating publicly available searchable indices of the materials subject
+to the parameters set forth in our robots.txt file.
 """
 
 __version__ = 0.7
